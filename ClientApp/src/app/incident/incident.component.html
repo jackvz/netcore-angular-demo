@@ -1,0 +1,15 @@
+<ng-container *ngIf="(incident$ | async) as incident; else loading">
+
+  <h1>Incident {{ incident.incidentId }}</h1>
+  <div>{{ incident.type }}</div>
+  <div>{{ incident.description }}</div>
+  <ul>
+    <li>{{ incident.person }}</li>
+    <li>{{ incident.dt }}</li>
+  </ul>
+
+</ng-container>
+<ng-template #loading>Loading…</ng-template>
+<div class="form-group">
+  <button class="btn btn-secondary float-left" (click)="cancel()">Cancel</button>
+</div>
